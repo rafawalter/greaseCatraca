@@ -45,7 +45,6 @@ function horas_trabalhadas(string_horas) {
 		var horas = "00:00";
 		marcacoes = string_horas.split(' ').filter(preenchido);
 		for (i = 0; i < marcacoes.length; i += 2) {
-			console.log(i);
 			horas = somar_horas(horas, subtrair_horas(marcacoes[i+1], marcacoes[i]));
 		}
 		horas = limita_horas(horas);
