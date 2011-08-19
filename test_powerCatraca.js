@@ -40,6 +40,18 @@ test('Deve subtrair horas corretamente', function() {
     same(subtrair_horas("03:00", "02:00"), "01:00");
 });
 
+test('Calculo basico de saldo', function() {
+    var string_horas = "10:00    13:00    14:00    18:01";
+    var resultado_esperado = "00:01";
+    same(saldo(string_horas), resultado_esperado);
+});
+
+test('Calculo basico de saldo negativo', function() {
+    var string_horas = "10:00    13:00    14:00    16:30";
+    var resultado_esperado = "-01:30";
+    same(saldo(string_horas), resultado_esperado);
+});
+
 test('Saldo maximo de 2 horas por dia', function() {
     var string_horas = "09:00    20:00    ";
     var resultado_esperado = "02:00";

@@ -2,10 +2,6 @@ function preenchido(elemento) {
 	return elemento != "";
 }
 
-function data_hora(hora) {
-	return new Date (new Date().toDateString() + ' ' + hora);
-}
-
 function completa_com_zeros(valor) {
 	texto = "" + valor;
 	if (texto.length < 2) {
