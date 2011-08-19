@@ -34,6 +34,13 @@ function limita_horas(horas) {
 	return horas;
 }
 
+function aplica_tolerancias_de_15mins(horas) {
+	if (horas >= "06:45" && horas < "07:00") {
+		horas = "07:00";
+	}
+	return horas;
+}
+
 function horas_trabalhadas(string_horas) {
 		var horas = "00:00";
 		marcacoes = string_horas.split(' ').filter(preenchido);
@@ -42,5 +49,6 @@ function horas_trabalhadas(string_horas) {
 			horas = somar_horas(horas, subtrair_horas(marcacoes[i+1], marcacoes[i]));
 		}
 		horas = limita_horas(horas);
+		horas = aplica_tolerancias_de_15mins(horas);
     return horas;
 }
